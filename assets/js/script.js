@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
     }
   });
+
   for (const anchor of document.querySelectorAll('a[href^="#"]')) {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
   const contactForm = document.querySelector(".contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
@@ -42,17 +44,19 @@ document.addEventListener("DOMContentLoaded", () => {
           input.classList.remove("is-invalid");
         }
       }
+
       if (valid) {
         const formContainer = this.parentElement;
         formContainer.innerHTML = `
-                    <div class="alert alert-success text-center p-5" role="alert">
-                        <h4 class="alert-heading mb-3">¡Mensaje Enviado!</h4>
-                        <p>Gracias por contactarnos. Nos pondremos en contacto contigo pronto.</p>
-                    </div>
-                `;
+            <div class="alert alert-success text-center p-5" role="alert">
+                <h4 class="alert-heading mb-3">¡Mensaje Enviado!</h4>
+                <p>Gracias por contactarnos. Nos pondremos en contacto contigo pronto.</p>
+            </div>
+        `;
       }
     });
   }
+
   const cards = document.querySelectorAll(".card");
   for (const card of cards) {
     card.addEventListener("mouseenter", function () {
